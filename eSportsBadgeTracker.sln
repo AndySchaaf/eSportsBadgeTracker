@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSportsBadgeTracker", "eSportsBadgeTracker.csproj", "{1B08DA1F-AF3D-4DCB-B262-B38944C5E2F8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FA0BDDA5-17BC-48EC-9E25-30892F85459E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

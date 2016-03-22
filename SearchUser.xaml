@@ -14,8 +14,6 @@
             </ListView.View>
         </ListView>
         <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnCheckIn" Content="Check In" Margin="409,0,0,10" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnCheckIn_Click" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="103" Background="#FF3F8B33"/>
-        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="26" Margin="270,0,0,15" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="127"/>
-        <Label x:Name="lblTicketID" Content="Ticket ID:" Margin="191,0,0,17" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="Black" FontSize="14.667" FontWeight="Bold" Height="28" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="76"/>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Height="25" Width="88" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
         <TextBox x:Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label_Copy" Content="Last Name" Margin="140,8,287,0" VerticalAlignment="Top" Height="25" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>

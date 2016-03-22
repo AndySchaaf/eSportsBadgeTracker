@@ -15,7 +15,7 @@ namespace eSportsBadgeTracker
     public partial class SearchUser : Page {
         public static SearchUser searchUser;
         public int selectedIndex = -1;
-        SQLDataHandler sqlHandler;
+        public SQLDataHandler sqlHandler;
 
         public SearchUser()
         {
@@ -40,15 +40,8 @@ namespace eSportsBadgeTracker
         }
 
         private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
-            // Check in the User
-            if (selectedIndex > -1) {
-                DataRowView selectedRow = listView.Items.GetItemAt(selectedIndex) as DataRowView;
-                string custID = selectedRow["CustomerID"].ToString();
-                sqlHandler.CheckInUser(custID, txtTicketID.Text);
-                RefreshUI();
-            } else {
-                MessageBox.Show("Please select a valid user!");
-            }
+            ScanWindow scanWin = new ScanWindow(this);
+            scanWin.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e) {
