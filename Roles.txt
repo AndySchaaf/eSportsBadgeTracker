@@ -5,6 +5,7 @@ Laz - Upload data file / sample sql inserts
       Windows match up 
       Add user page
       Provide db info for Gabriel
+      Raffle 
       
 Ebli - Get sample tickets
 
