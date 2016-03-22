@@ -1,35 +1,27 @@
 ﻿<Page x:Class="eSportsBadgeTracker.SearchUser"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:eSportsBadgeTracker"
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="SearchUser">
-
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Check In" Height="350.5" Width="521.5">
     <Grid>
-        <DockPanel Grid.Row="1" Grid.Column="2">
-            <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Margin="10" DockPanel.Dock="Bottom" Height="25"/>
-            <StackPanel DockPanel.Dock="Top" Height="25" VerticalAlignment="Top" Orientation="Horizontal">
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="220" Height="45" VerticalAlignment="Center">
-
-                    <TextBlock x:Name="FirstNameLabel" TextWrapping="Wrap" Text="First Name:" Margin="10" VerticalAlignment="Center"/>
-                    <TextBox x:Name="FirstName" TextWrapping="Wrap" Text="John" Width="120" Margin="10" d:LayoutOverrides="LeftPosition, RightPosition" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="220" Height="45" VerticalAlignment="Center">
-                    <TextBlock x:Name="LastNameLabel" TextWrapping="Wrap" Margin="5" VerticalAlignment="Center" Text="Last Name:"/>
-                    <TextBox x:Name="LastName" TextWrapping="Wrap" Text="Doe" Width="120" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" d:LayoutOverrides="LeftPosition, RightPosition"/>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel DockPanel.Dock="Top" Height="25" VerticalAlignment="Top" Orientation="Horizontal">
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="220" Height="45" VerticalAlignment="Center">
-                    <TextBlock x:Name="EmailLabel" TextWrapping="Wrap" Text="E-mail:" Margin="10" VerticalAlignment="Center"/>
-                    <TextBox x:Name="EMailLabel" TextWrapping="Wrap" Text="jdoe@email.com" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center" d:LayoutOverrides="LeftPosition, RightPosition" Width="120"/>
-                </StackPanel>
-            </StackPanel>
-            <Image x:Name="image" OpacityMask="Blue"/>
-        </DockPanel>
-
+        <ListView x:Name="listView" Margin="10,76,10,62" SelectionChanged="listView_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CustomerID}" Header="ID" Width="35" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name" Width="125" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Header="Last Name" Width="125" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Email}" Header="Email" Width="215" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnCheckIn" Content="Check In" Margin="409,0,0,10" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnCheckIn_Click" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="103" Background="#FF3F8B33"/>
+        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="26" Margin="270,0,0,15" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="127"/>
+        <Label x:Name="lblTicketID" Content="Ticket ID:" Margin="191,0,0,17" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="Black" FontSize="14.667" FontWeight="Bold" Height="28" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="76"/>
+        <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Height="25" Width="88" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
+        <TextBox x:Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy" Content="Last Name" Margin="140,8,287,0" VerticalAlignment="Top" Height="25" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
+        <TextBox x:Name="txtLName" Height="23" Margin="145,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <Label x:Name="label_Copy1" Content="Email" Margin="0,8,153,0" VerticalAlignment="Top" Height="25" Foreground="Black" FontWeight="Bold" FontSize="13.333" HorizontalAlignment="Right" Width="88"/>
+        <TextBox x:Name="txtEmail" Margin="279,33,116,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnSearch" Content="Search" Margin="426,0,0,289" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnSearch_Click" Height="42" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="86" Background="#CC348CAE"/>
     </Grid>
 </Page>
