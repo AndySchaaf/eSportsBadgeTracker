@@ -1,0 +1,12 @@
+Andy  - Data parsing 
+
+Laz - Upload data file / sample sql inserts 
+      Scanner functionality
+      Windows match up 
+      Add user page
+      Provide db info for Gabriel
+      
+Ebli - Get sample tickets
+
+Gabriel - Statistics 
+
