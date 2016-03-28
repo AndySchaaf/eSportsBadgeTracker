@@ -1,0 +1,7 @@
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\bin\Debug\CEN3073DataParser.exe.config
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\bin\Debug\CEN3073DataParser.exe
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\bin\Debug\CEN3073DataParser.pdb
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\obj\Debug\CEN3073DataParser.csprojResolveAssemblyReference.cache
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\obj\Debug\CEN3073DataParser.csproj.ResolveComReference.cache
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\obj\Debug\CEN3073DataParser.exe
+c:\users\andy\documents\visual studio 2013\Projects\CEN3073DataParser\obj\Debug\CEN3073DataParser.pdb
