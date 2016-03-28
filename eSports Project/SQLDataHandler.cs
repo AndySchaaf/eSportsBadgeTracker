@@ -24,6 +24,44 @@ public class SQLDataHandler {
         }
     }
 
+    public DataSet loadStatData() {
+        using (SqlCommand cmd = new SqlCommand("GetStatisticsCounts", con)) {
+
+            String regi = "@Registered";
+            String checked1 = "@CheckedIn";
+            String unregi = "@UnRegistered";
+            String vip = "@VIPBadges";
+            String regular = "@RegBadges";
+            String loot = "@LootBags";
+            String meal = "@MealTickets";
+            String un ="@unTickets";
+            
+            SqlParameter registered = new SqlParameter(regi , SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(registered);
+            SqlParameter CheckedIn = new SqlParameter( checked1 , SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(CheckedIn);
+            SqlParameter UnRegistered = new SqlParameter( unregi, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(UnRegistered);
+            SqlParameter VIPBadges  = new SqlParameter( vip, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(VIPBadges);
+            SqlParameter RegBadges  = new SqlParameter( regular , SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(RegBadges);
+            SqlParameter LootBags = new SqlParameter( loot , SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(LootBags);
+            SqlParameter MealTickets  = new SqlParameter( meal, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(MealTickets);
+            SqlParameter unTickets = new SqlParameter( un , SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(unTickets);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            reader = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            reader.Fill(ds);
+            ds.Tables.Add(CreateDataTable(cmd.Parameters));
+            return ds;
+        }
+    }
+
     public DataTable fillDataTable(string sql) {
         //Excecutes SQL query and returns the datatable 
         using (SqlCommand cmd = new SqlCommand(sql, con)) {
@@ -96,4 +134,25 @@ public class SQLDataHandler {
     public string GetCustomerID(string fName, string lName, string email) {
         return checkData("GetCustomerID '" + fName + "', '" + lName + "', '" + email + "';");
     }
+
+
+    private DataTable CreateDataTable(SqlParameterCollection values)
+    {
+        DataTable table = new DataTable("counts");
+        foreach (SqlParameter param in values)
+        {
+            table.Columns.Add(param.ParameterName , typeof(int));
+        }
+        DataRow row = table.NewRow();
+
+        foreach (SqlParameter param in values)
+        {
+            row[param.ParameterName] = param.Value;
+        }
+        table.Rows.Add(row);
+        return table;
+    }
+
+
+
 }

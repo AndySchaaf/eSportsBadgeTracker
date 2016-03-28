@@ -40,5 +40,17 @@ namespace eSportsBadgeTracker {
             RegistrationPage rp = new RegistrationPage();
             rp.searchPage = searchPage;
         }
+
+        private void tabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (tabControl.SelectedIndex == 3)
+            {
+                stattest.dispatcherTimer.IsEnabled = true;
+            }
+            else {
+                stattest.dispatcherTimer.IsEnabled = false;
+            }
+
+        }
     }
 }

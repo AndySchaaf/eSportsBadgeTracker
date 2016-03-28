@@ -4,7 +4,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="eSports Badge Tracker" Height="694.876" Width="925.025" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black">
     <Grid Background="#FF3F3F46">
-        <TabControl x:Name="tabControl" Margin="10">
+        <TabControl x:Name="tabControl" Margin="10" SelectionChanged="tabControl_SelectionChanged">
             <TabItem Header="Registration" Margin="0" Padding="17,2">
                 <Grid Background="#FFE6E6E6">
                     <Viewbox>
@@ -23,6 +23,13 @@
                 <Grid Background="#FFE6E6E6">
                     <Viewbox>
                         <Frame x:Name="frame3" Content="Frame" Source="/eSportsBadgeTracker;component/RedeemPage.xaml" Height="180" Width="435"/>
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Statistics" Margin="0" Padding="17,2">
+                <Grid Background="#FFE6E6E6">
+                    <Viewbox>
+                        <Frame x:Name="frame4" Content="Frame" Source="/eSportsBadgeTracker;component/stattest.xaml" Height="350" Width="520"/>
                     </Viewbox>
                 </Grid>
             </TabItem>
