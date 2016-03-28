@@ -9,7 +9,7 @@ using System.Data;
 namespace eSportsBadgeTracker
 {
 
-    public partial class stattest : Page
+    public partial class Statistics : Page
     {
     //@Registered int output,
     //@CheckedIn int output,
@@ -27,7 +27,7 @@ namespace eSportsBadgeTracker
         DataSet ds;
         public static System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
-        public stattest()
+        public Statistics()
         {
             Focusable = true;
 
