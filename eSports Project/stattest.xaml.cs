@@ -47,26 +47,15 @@ namespace eSportsBadgeTracker
             chart2.DataBindTable((ds.Tables["Table1"] as System.ComponentModel.IListSource).GetList(), "15minutes");
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
+            dispatcherTimer.Interval = new TimeSpan(0, 1, 0);
 
 
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            //UpdateData();
+            UpdateData();
             Console.WriteLine("users stats update aka timer ticked!");
-        }
-
-        private void Page_GotFocus(object sender, RoutedEventArgs e)
-        {
-            //UpdateData();
-            Console.WriteLine("got focus");
-        }
-
-        private void Page_LostFocus(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("lost focus");
         }
 
         private void UpdateData()
