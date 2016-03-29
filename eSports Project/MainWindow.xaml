@@ -2,9 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="eSports Badge Tracker" Height="694.876" Width="925.025" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black">
+        Title="eSports Badge Tracker" Height="694.876" Width="925.025" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black" Closing="MetroWindow_Closing">
     <Grid Background="#FF3F3F46">
-        <TabControl x:Name="tabControl" Margin="10" SelectionChanged="tabControl_SelectionChanged">
+        <TabControl x:Name="tabControl" Margin="10,10,10,71" SelectionChanged="tabControl_SelectionChanged">
             <TabItem x:Name="assignTab" Header="Assign Badge" Margin="0" Padding="17,2">
                 <Grid Background="#FFE6E6E6">
                     <Viewbox>
@@ -39,16 +39,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <!--
-        <Viewbox Margin="0,0,424,0">
-            <StackPanel Height="1388"  Width="590" VerticalAlignment="Top">
-                <Button x:Name="btnRegister" Content="Register User" FontSize="48" FontWeight="Bold" Click="btnRegister_Click" Height="121" VerticalAlignment="Top" FontFamily="Global User Interface" Margin="34,0" Foreground="#FF0B295D"/>
-                <Line></Line>
-                <Button x:Name="btnCheckIn" Content="Assign Badge" FontSize="48" FontWeight="Bold" Click="btnCheckIn_Click" Height="120" VerticalAlignment="Center" FontFamily="Global User Interface" Margin="34,0" Foreground="#FF0B295D"/>
-                <Button x:Name="btnRedeem" Content="Scan Badge" FontSize="48" FontWeight="Bold" Click="btnRedeem_Click" Height="121" VerticalAlignment="Bottom" FontFamily="Global User Interface" Margin="34,0" Foreground="#FF0B295D"/>
-            </StackPanel>
+        <Viewbox Height="665" VerticalAlignment="Bottom">
+            <Grid Margin="15,599,17,10" Width="890">
+                <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnExit" Content="Logout"  Background="#FFDC4545" Click="btnExit_Click" FontSize="24" HorizontalAlignment="Left" Width="210"/>
+                <Image Source="Themes/esportsLogo.png" HorizontalAlignment="Right" Width="56" Height="56" VerticalAlignment="Bottom"/>
+            </Grid>
         </Viewbox>
-        -->
-
     </Grid>
 </Controls:MetroWindow>

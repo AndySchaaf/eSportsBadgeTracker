@@ -19,6 +19,7 @@ namespace eSportsBadgeTracker {
     /// </summary>
     public partial class LoginWindow : MetroWindow {
         SQLDataHandler loginManager;
+        MainWindow myWindow;
 
         public LoginWindow() {
             InitializeComponent();
@@ -29,21 +30,21 @@ namespace eSportsBadgeTracker {
             string result = loginManager.LogIn(txtUserName.Text, pwdBox.Password);
             
             if (result == "admin") {
-                MainWindow myWindow = new MainWindow(true);
+                myWindow = new MainWindow(this, true);
                 myWindow.Show();
-                this.Close();
+                this.Hide();
             }
             else if (result == "client")
             {
-                MainWindow myWindow = new MainWindow(false, true);
+                myWindow = new MainWindow(this, false, true);
                 myWindow.Show();
-                this.Close();
+                this.Hide();
             }
             else if (result == "user")
             {
-                MainWindow myWindow = new MainWindow(false);
+                myWindow = new MainWindow(this, false);
                 myWindow.Show();
-                this.Close();
+                this.Hide();
             }
             else
                 MessageBox.Show(result);
@@ -51,6 +52,13 @@ namespace eSportsBadgeTracker {
 
         private void btnExit_Click(object sender, RoutedEventArgs e) {
             Environment.Exit(0);
+        }
+
+        public void LogOut()
+        {
+            txtUserName.Text = "";
+            pwdBox.Password = "";
+            this.Show();
         }
     }
 }

@@ -16,10 +16,17 @@ namespace eSportsBadgeTracker {
     public partial class MainWindow : MetroWindow {
         public int selectedIndex = -1;
         public string selectedCustomerID;
+        private LoginWindow par;
         public SearchUser searchPage;
 
-        public MainWindow(bool isAdmin, bool isClient = false) {
+        /// <summary>
+        /// Creates the main application window
+        /// </summary>
+        /// <param name="isAdmin">Admins receive a statistics page</param>
+        /// <param name="isClient">Client view only sees the registration page</param>
+        public MainWindow(LoginWindow parent, bool isAdmin, bool isClient = false) {
             InitializeComponent();
+            par = parent;
             searchPage = new SearchUser();
 
             // Client and standard user view need changes
@@ -28,9 +35,9 @@ namespace eSportsBadgeTracker {
             else if (!isAdmin)
                 SetUserView();
         }
-
+        
         private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
-            //searchPage = new SearchUser();
+            
         }
 
         private void btnRedeem_Click(object sender, RoutedEventArgs e) {
@@ -59,11 +66,23 @@ namespace eSportsBadgeTracker {
             tabControl.Items.Remove(assignTab);
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(scanTab);
+            btnExit.IsEnabled = false;
+            btnExit.Visibility = Visibility.Hidden;
         }
 
         private void SetUserView()
         {
             tabControl.Items.Remove(statsTab);
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            par.LogOut();
         }
     }
 }
