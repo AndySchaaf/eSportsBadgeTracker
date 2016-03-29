@@ -18,14 +18,15 @@ namespace eSportsBadgeTracker {
         public string selectedCustomerID;
         public SearchUser searchPage;
 
-        public MainWindow() {
+        public MainWindow(bool isAdmin, bool isClient = false) {
             InitializeComponent();
             searchPage = new SearchUser();
-            /*
-            NavigationWindow navWin = new NavigationWindow();
-            navWin.Content = searchPage;
-            navWin.Show();
-            */
+
+            // Client and standard user view need changes
+            if (isClient)
+                SetClientView();
+            else if (!isAdmin)
+                SetUserView();
         }
 
         private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
@@ -45,12 +46,24 @@ namespace eSportsBadgeTracker {
         {
             if (tabControl.SelectedIndex == 3)
             {
-                stattest.dispatcherTimer.IsEnabled = true;
+                Statistics.dispatcherTimer.IsEnabled = true;
             }
             else {
-                stattest.dispatcherTimer.IsEnabled = false;
+                Statistics.dispatcherTimer.IsEnabled = false;
             }
 
+        }
+
+        private void SetClientView()
+        {
+            tabControl.Items.Remove(assignTab);
+            tabControl.Items.Remove(statsTab);
+            tabControl.Items.Remove(scanTab);
+        }
+
+        private void SetUserView()
+        {
+            tabControl.Items.Remove(statsTab);
         }
     }
 }

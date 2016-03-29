@@ -11,12 +11,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace eSportsBadgeTracker {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window {
+    public partial class LoginWindow : MetroWindow {
         SQLDataHandler loginManager;
 
         public LoginWindow() {
@@ -26,11 +27,25 @@ namespace eSportsBadgeTracker {
 
         private void btnLogin_Click(object sender, RoutedEventArgs e) {
             string result = loginManager.LogIn(txtUserName.Text, pwdBox.Password);
-            if (result == "Success!") {
-                MainWindow myWindow = new MainWindow();
+            
+            if (result == "admin") {
+                MainWindow myWindow = new MainWindow(true);
                 myWindow.Show();
                 this.Close();
-            } else
+            }
+            else if (result == "client")
+            {
+                MainWindow myWindow = new MainWindow(false, true);
+                myWindow.Show();
+                this.Close();
+            }
+            else if (result == "user")
+            {
+                MainWindow myWindow = new MainWindow(false);
+                myWindow.Show();
+                this.Close();
+            }
+            else
                 MessageBox.Show(result);
         }
 

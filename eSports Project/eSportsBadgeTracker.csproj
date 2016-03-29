@@ -89,10 +89,10 @@
       <DependentUpon>SearchUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="SQLDataHandler.cs" />
-    <Compile Include="StatsViewModel.cs" />
-    <Compile Include="stattest.xaml.cs">
-      <DependentUpon>stattest.xaml</DependentUpon>
+    <Compile Include="Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatsViewModel.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,9 +125,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="stattest.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Statistics.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
