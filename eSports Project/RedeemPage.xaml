@@ -4,7 +4,7 @@
         Title="Redemption Page" Height="187.461" Width="435.758">
     <Grid>
         <Label x:Name="label" Content="Ticket ID:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Height="30" Width="77" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
-        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="12" Margin="82,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="14.667" TextChanged="txtTicketID_TextChanged"/>
+        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="12" Margin="82,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="12" TextChanged="txtTicketID_TextChanged"/>
 
         <ListView x:Name="listView" Margin="10,50,22,0" IsHitTestVisible="False" Focusable="False" Height="63" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListView.View>

@@ -11,14 +11,14 @@ namespace eSportsBadgeTracker
 
     public partial class Statistics : Page
     {
-    //@Registered int output,
-    //@CheckedIn int output,
-    //@UnRegistered int output,
-    //@VIPBadges int output,
-    //@RegBadges int output,
-    //@LootBags int output,
-    //@MealTickets int output,
-    //@unTickets int output
+        //@Registered int output,
+        //@CheckedIn int output,
+        //@UnRegistered int output,
+        //@VIPBadges int output,
+        //@RegBadges int output,
+        //@LootBags int output,
+        //@MealTickets int output,
+        //@unTickets int output
 
         String area1 = "regCount";
         String area2 = "mealCount";
@@ -48,8 +48,6 @@ namespace eSportsBadgeTracker
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 1, 0);
-
-
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -58,11 +56,9 @@ namespace eSportsBadgeTracker
             Console.WriteLine("users stats update aka timer ticked!");
         }
 
-
         private void UpdateData()
         {
-                ds = dh.loadStatData();
-
+            ds = dh.loadStatData();
             vm.Registered = ds.Tables["counts"].Rows[0]["@Registered"].ToString();
             vm.CheckedIn = ds.Tables["counts"].Rows[0]["@CheckedIn"].ToString();
             vm.Unregistered = ds.Tables["counts"].Rows[0]["@UnRegistered"].ToString();
@@ -70,10 +66,7 @@ namespace eSportsBadgeTracker
             vm.Reg = ds.Tables["counts"].Rows[0]["@RegBadges"].ToString();
             vm.Loot = ds.Tables["counts"].Rows[0]["@LootBags"].ToString();
             vm.Meal = ds.Tables["counts"].Rows[0]["@MealTickets"].ToString();
-            vm.Untick = ds.Tables["counts"].Rows[0]["@unTickets"].ToString();
-            
-        }
-
-        
+            vm.Untick = ds.Tables["counts"].Rows[0]["@unTickets"].ToString();            
+        }        
     }
 }

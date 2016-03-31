@@ -19,7 +19,7 @@
             </Grid>
             <Grid Height="38">
                 <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnExit" Content="Exit"  Background="#FFDC4545" Margin="10,0,130,0" Click="btnExit_Click"/>
-                <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnLogin" Content="Login"  Background="#FF3F8B33" Margin="130,0,10,0" Click="btnLogin_Click"/>
+                <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnLogin" Content="Login"  Background="#FF3F8B33" Margin="130,0,10,0" Click="btnLogin_Click" IsDefault="True"/>
             </Grid>
         </StackPanel>
     </Viewbox>

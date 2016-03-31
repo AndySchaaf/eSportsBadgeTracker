@@ -24,6 +24,7 @@ namespace eSportsBadgeTracker {
         public LoginWindow() {
             InitializeComponent();
             loginManager = new SQLDataHandler();
+            txtUserName.Focus();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e) {

@@ -17,7 +17,6 @@ namespace eSportsBadgeTracker {
         public int selectedIndex = -1;
         public string selectedCustomerID;
         private LoginWindow par;
-        public SearchUser searchPage;
 
         /// <summary>
         /// Creates the main application window
@@ -27,31 +26,28 @@ namespace eSportsBadgeTracker {
         public MainWindow(LoginWindow parent, bool isAdmin, bool isClient = false) {
             InitializeComponent();
             par = parent;
-            searchPage = new SearchUser();
+            SearchUser.dispatcherTimer.IsEnabled = true;
 
             // Client and standard user view need changes
             if (isClient)
                 SetClientView();
             else if (!isAdmin)
                 SetUserView();
-        }
-        
-        private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
-            
-        }
-
-        private void btnRedeem_Click(object sender, RoutedEventArgs e) {
-            RedeemPage redeemPage = new RedeemPage();
-        }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e) {
-            RegistrationPage rp = new RegistrationPage();
-            rp.searchPage = searchPage;
-        }
+        }        
 
         private void tabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (tabControl.SelectedIndex == 3)
+            if (assignTab.IsSelected) {
+                SearchUser.dispatcherTimer.IsEnabled = true;
+            } else {
+                SearchUser.dispatcherTimer.IsEnabled = false;
+            }
+
+            if (scanTab.IsSelected) {
+                RedeemPage.txtScanner.SelectAll();
+            }
+
+            if (statsTab.IsSelected)
             {
                 Statistics.dispatcherTimer.IsEnabled = true;
             }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace eSportsBadgeTracker
 {
@@ -16,13 +17,21 @@ namespace eSportsBadgeTracker
         public static SearchUser searchUser;
         public int selectedIndex = -1;
         public SQLDataHandler sqlHandler;
+        public static DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         public SearchUser()
         {
             InitializeComponent();
             searchUser = this;
             sqlHandler = new SQLDataHandler();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 15);
             RefreshUI();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e) {
+            RefreshUI();
+            Console.WriteLine("users stats update aka timer ticked!");
         }
 
         private void listView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {

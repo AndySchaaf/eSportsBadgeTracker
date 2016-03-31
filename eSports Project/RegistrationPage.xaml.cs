@@ -18,6 +18,7 @@ namespace eSportsBadgeTracker {
         public RegistrationPage() {
             InitializeComponent();
             sqlHandler = new SQLDataHandler();
+            btnRegister.Focus();
         }
 
         private void btnRegister_Click_1(object sender, RoutedEventArgs e) {
