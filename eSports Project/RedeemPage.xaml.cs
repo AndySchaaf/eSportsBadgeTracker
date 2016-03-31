@@ -37,7 +37,8 @@ namespace eSportsBadgeTracker {
 
         private void Timer_Tick(object sender, EventArgs e) {
             const int timeout = 500;
-            if ((DateTime.Now - _lastBarCodeCharReadTime).Milliseconds < timeout)
+            DateTime _dateTimeNow = DateTime.Now;
+            if (_dateTimeNow < _lastBarCodeCharReadTime.AddMilliseconds(timeout))
                 return;
             
             RefreshUI();
@@ -60,8 +61,8 @@ namespace eSportsBadgeTracker {
             // Redeem their gift
             if (txtTicketID.Text != "") {
                 // DEBUG: No real badges yet, use 1
-                // sqlHandler.RedeemGift(txtTicketID.Text);
-                sqlHandler.RedeemGift("1");
+                sqlHandler.RedeemGift(txtTicketID.Text);
+                // sqlHandler.RedeemGift("1");
                 RefreshUI();
             }
     }
@@ -70,8 +71,8 @@ namespace eSportsBadgeTracker {
             // Refresh their meal 
             if (txtTicketID.Text != "") {
                 // DEBUG: No real badges yet, use 1
-                // sqlHandler.RedeemMeal(txtTicketID.Text, false);
-                sqlHandler.RedeemMeal("1", false);
+                sqlHandler.RedeemMeal(txtTicketID.Text, false);
+                // sqlHandler.RedeemMeal("1", false);
                 RefreshUI();
             }
     }
@@ -80,17 +81,17 @@ namespace eSportsBadgeTracker {
             // Redeem their meal
             if (txtTicketID.Text != "") {
                 // DEBUG: No real badges yet, use 1
-                // sqlHandler.RedeemMeal(txtTicketID.Text, true);
-                sqlHandler.RedeemMeal("1", true);
+                sqlHandler.RedeemMeal(txtTicketID.Text, true);
+                // sqlHandler.RedeemMeal("1", true);
                 RefreshUI();
             }
         }
 
         private void RefreshUI() {
             DataTable dt = new DataTable();
-            dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", "1"));
             // DEBUG: No real tickets yet, so use 1
-            //dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", txtTicketID.Text));
+            dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", txtTicketID.Text));
+            // dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", "1"));
             if (dt.Rows.Count > 0) {
                 bool meal = (bool)dt.Rows[0]["Meal"];
                 bool prize = (bool)dt.Rows[0]["canGetPrize"];
@@ -100,6 +101,7 @@ namespace eSportsBadgeTracker {
             } else {
                 MessageBox.Show("ERROR: Ticket is not registered");
             }
+            txtTicketID.Focus();
             txtTicketID.SelectAll();
         }
     }

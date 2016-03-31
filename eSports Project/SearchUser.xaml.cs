@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace eSportsBadgeTracker
@@ -48,9 +49,18 @@ namespace eSportsBadgeTracker
             txtEmail.Text = "";
         }
 
-        private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
+        private void CheckInUser() {
+            SearchUser.dispatcherTimer.IsEnabled = false;
             ScanWindow scanWin = new ScanWindow(this);
             scanWin.ShowDialog();
+        }
+
+        private void btnCheckIn_Click(object sender, RoutedEventArgs e) {
+            CheckInUser();
+        }
+
+        private void listView_MouseDoubleClick(object sender, MouseEventArgs e) {
+            CheckInUser();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e) {

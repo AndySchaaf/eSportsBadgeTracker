@@ -103,7 +103,7 @@ public class SQLDataHandler {
     }
 
     public string CheckInUser(string customerID, string ticketID) {
-        string result = checkData("CheckInCustomer " + customerID + ", " + ticketID + ";");
+        string result = checkData("CheckInCustomer '" + customerID + "', '" + ticketID + "';");
         if (result.ToLower().Contains("success")) {
             AutoClosingMessageBox.Show(result, "Scan Results", 1000);
         } else {

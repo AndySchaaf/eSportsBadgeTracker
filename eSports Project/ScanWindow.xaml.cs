@@ -52,11 +52,12 @@ namespace eSportsBadgeTracker
                 DataRowView selectedRow = page.listView.Items.GetItemAt(page.selectedIndex) as DataRowView;
                 string custID = selectedRow["CustomerID"].ToString();
                 // DEBUG: No real badges yet, use 1
-                //string test = page.sqlHandler.CheckInUser(custID, txtScanID.Text);
-                string test = page.sqlHandler.CheckInUser(custID, "1");
+                string test = page.sqlHandler.CheckInUser(custID, txtScanID.Text);
+                // string test = page.sqlHandler.CheckInUser(custID, "1");
 
                 if (test.ToLower().Contains("success")) {
                     page.RefreshUI();
+                    SearchUser.dispatcherTimer.IsEnabled = true;
                     this.Close();
                 } else {
                     // Select the text so we can scan over it
