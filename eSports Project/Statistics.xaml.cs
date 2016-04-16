@@ -64,8 +64,8 @@ namespace eSportsBadgeTracker
             vm.Unregistered = ds.Tables["counts"].Rows[0]["@UnRegistered"].ToString();
             vm.Vip = ds.Tables["counts"].Rows[0]["@VIPBadges"].ToString();
             vm.Reg = ds.Tables["counts"].Rows[0]["@RegBadges"].ToString();
-            vm.Loot = ds.Tables["counts"].Rows[0]["@LootBags"].ToString();
-            vm.Meal = ds.Tables["counts"].Rows[0]["@MealTickets"].ToString();
+            vm.VIPLoot = ds.Tables["counts"].Rows[0]["@VIPBags"].ToString();
+            vm.RegLoot = ds.Tables["counts"].Rows[0]["@REGBags"].ToString();
             vm.Untick = ds.Tables["counts"].Rows[0]["@unTickets"].ToString();            
         }        
     }

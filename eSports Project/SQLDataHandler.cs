@@ -32,8 +32,8 @@ public class SQLDataHandler {
             String unregi = "@UnRegistered";
             String vip = "@VIPBadges";
             String regular = "@RegBadges";
-            String loot = "@LootBags";
-            String meal = "@MealTickets";
+            String loot = "@VIPBags";
+            String regBag = "@REGBags";
             String un ="@unTickets";
             
             SqlParameter registered = new SqlParameter(regi , SqlDbType.Int) { Direction = ParameterDirection.Output };
@@ -48,8 +48,8 @@ public class SQLDataHandler {
             cmd.Parameters.Add(RegBadges);
             SqlParameter LootBags = new SqlParameter( loot , SqlDbType.Int) { Direction = ParameterDirection.Output };
             cmd.Parameters.Add(LootBags);
-            SqlParameter MealTickets  = new SqlParameter( meal, SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(MealTickets);
+            SqlParameter RegBags  = new SqlParameter(regBag, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(RegBags);
             SqlParameter unTickets = new SqlParameter( un , SqlDbType.Int) { Direction = ParameterDirection.Output };
             cmd.Parameters.Add(unTickets);
 

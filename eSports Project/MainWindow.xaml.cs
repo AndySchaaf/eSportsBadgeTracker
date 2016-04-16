@@ -62,6 +62,7 @@ namespace eSportsBadgeTracker {
             tabControl.Items.Remove(assignTab);
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(scanTab);
+            tabControl.Items.Remove(raffleTab);
             btnExit.IsEnabled = false;
             btnExit.Visibility = Visibility.Hidden;
         }
@@ -69,6 +70,7 @@ namespace eSportsBadgeTracker {
         private void SetUserView()
         {
             tabControl.Items.Remove(statsTab);
+            tabControl.Items.Remove(raffleTab);
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)

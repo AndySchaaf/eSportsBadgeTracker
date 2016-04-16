@@ -5,7 +5,7 @@
         Title="eSports Badge Tracker" Height="694.876" Width="925.025" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black" Closing="MetroWindow_Closing">
     <Grid Background="#FF3F3F46">
         <TabControl x:Name="tabControl" Margin="10,10,10,71" SelectionChanged="tabControl_SelectionChanged">
-            <TabItem x:Name="assignTab" Header="Assign Badge" Margin="0" Padding="17,2">
+            <TabItem x:Name="assignTab" Header="Check In" Margin="0" Padding="17,2">
                 <Grid Background="#FFE6E6E6">
                     <Viewbox>
                         <Frame x:Name="frame2" Content="Frame" Source="/eSportsBadgeTracker;component/SearchUser.xaml" Height="350" Width="520"/>
@@ -20,7 +20,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem x:Name="scanTab" Header="Scan Badge" Margin="0" Padding="17,2">
+            <TabItem x:Name="scanTab" Header="Get Loot" Margin="0" Padding="17,2">
                 <Grid Background="#FFE6E6E6">
                     <Viewbox>
                         <Frame x:Name="frame3" Content="Frame" Source="/eSportsBadgeTracker;component/RedeemPage.xaml" Height="180" Width="435"/>
@@ -35,6 +35,17 @@
                     </Grid.ColumnDefinitions>
                     <Viewbox Grid.ColumnSpan="2">
                         <Frame x:Name="frame4" Content="Frame" Source="/eSportsBadgeTracker;component/Statistics.xaml" Height="350" Width="520"/>
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="raffleTab" Header="Raffle" Margin="0" Padding="17,2">
+                <Grid Background="#FFE6E6E6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="265*"/>
+                        <ColumnDefinition Width="622*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.ColumnSpan="2">
+                        <Frame x:Name="frame5" Content="Frame" Source="/eSportsBadgeTracker;component/RafflePage.xaml" Height="350" Width="520"/>
                     </Viewbox>
                 </Grid>
             </TabItem>

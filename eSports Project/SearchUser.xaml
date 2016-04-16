@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Check In" Height="350.5" Width="521.5">
     <Grid>
-        <ListView x:Name="listView" Margin="10,76,10,62" SelectionChanged="listView_SelectionChanged" MouseDoubleClick="listView_MouseDoubleClick" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView x:Name="listView" Margin="10,76,10,62" SelectionChanged="listView_SelectionChanged" MouseDoubleClick="listView_MouseDoubleClick" FontSize="13.333" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=CustomerID}" Header="ID" Width="35" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name" Width="125" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Header="Last Name" Width="125" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Gender}" Header="Gender" Width="70" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Email}" Header="Email" Width="215" />
                 </GridView>
             </ListView.View>

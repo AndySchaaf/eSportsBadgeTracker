@@ -25,8 +25,8 @@ namespace eSportsBadgeTracker
         private string _unregistered;
         private string _vip;
         private string _reg;
-        private string _loot;
-        private string _meal;
+        private string _vipLoot;
+        private string _regLoot;
         private string _untick;
         #endregion Members
 
@@ -130,36 +130,36 @@ namespace eSportsBadgeTracker
             }
         }
 
-        public string Loot
+        public string VIPLoot
         {
             get
             {
-                return _loot;
+                return _vipLoot;
             }
 
             set
             {
-                if (_loot != value)
+                if (_vipLoot != value)
                 {
-                    _loot = value;
-                    NotifyPropertyChanged("Loot");
+                    _vipLoot = value;
+                    NotifyPropertyChanged("VIPLoot");
                 }
             }
         }
 
-        public string Meal
+        public string RegLoot
         {
             get
             {
-                return _meal;
+                return _regLoot;
             }
 
             set
             {
-                if (_meal != value)
+                if (_regLoot != value)
                 {
-                    _meal = value;
-                    NotifyPropertyChanged("Meal");
+                    _regLoot = value;
+                    NotifyPropertyChanged("RegLoot");
                 }
             }
         }

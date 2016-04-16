@@ -93,10 +93,10 @@ namespace eSportsBadgeTracker {
             dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", txtTicketID.Text));
             // dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", "1"));
             if (dt.Rows.Count > 0) {
-                bool meal = (bool)dt.Rows[0]["Meal"];
+                //bool meal = (bool)dt.Rows[0]["Meal"];
                 bool prize = (bool)dt.Rows[0]["canGetPrize"];
-                dt.Rows[0]["Meal"] = !meal;
-                dt.Rows[0]["canGetPrize"] = !prize;
+                //dt.Rows[0]["Meal"] = !meal;
+                dt.Rows[0]["canGetPrize"] = prize;
                 listView.ItemsSource = dt.DefaultView;
             } else {
                 MessageBox.Show("ERROR: Ticket is not registered");
