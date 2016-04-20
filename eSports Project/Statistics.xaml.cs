@@ -38,6 +38,8 @@ namespace eSportsBadgeTracker
 
             Chart chart = this.FindName("MyWinformChart") as Chart;
             Chart chart2 = this.FindName("MyWinformChart2") as Chart;
+            Chart chart3 = this.FindName("MyWinformChart3") as Chart;
+
             chart.ChartAreas[area1].AxisX.LabelStyle.Angle = 90;
             chart.ChartAreas[area1].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart.DataBindTable((ds.Tables["Table"] as System.ComponentModel.IListSource).GetList(), "5minutes");
@@ -45,6 +47,12 @@ namespace eSportsBadgeTracker
             chart2.ChartAreas[area2].AxisX.LabelStyle.Angle = 90;
             chart2.ChartAreas[area2].AxisX.LabelStyle.Format = "HH:mm";
             chart2.DataBindTable((ds.Tables["Table1"] as System.ComponentModel.IListSource).GetList(), "15minutes");
+
+            chart2.ChartAreas[area2].AxisX.LabelStyle.Angle = 90;
+            chart2.ChartAreas[area2].AxisX.LabelStyle.Format = "HH:mm";
+            chart2.DataBindTable((ds.Tables["Table3"] as System.ComponentModel.IListSource).GetList(), "Age");
+
+
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 1, 0);
@@ -62,10 +70,10 @@ namespace eSportsBadgeTracker
             vm.Registered = ds.Tables["counts"].Rows[0]["@Registered"].ToString();
             vm.CheckedIn = ds.Tables["counts"].Rows[0]["@CheckedIn"].ToString();
             vm.Unregistered = ds.Tables["counts"].Rows[0]["@UnRegistered"].ToString();
-            vm.Vip = ds.Tables["counts"].Rows[0]["@VIPBadges"].ToString();
-            vm.Reg = ds.Tables["counts"].Rows[0]["@RegBadges"].ToString();
-            vm.Loot = ds.Tables["counts"].Rows[0]["@LootBags"].ToString();
-            vm.Meal = ds.Tables["counts"].Rows[0]["@MealTickets"].ToString();
+            vm.VipGuest = ds.Tables["counts"].Rows[0]["@VIPBadges"].ToString();
+            vm.RegGuest = ds.Tables["counts"].Rows[0]["@RegBadges"].ToString();
+            vm.VIPBags = ds.Tables["counts"].Rows[0]["@VIPBags"].ToString();
+            vm.REGBags = ds.Tables["counts"].Rows[0]["@REGBags"].ToString();
             vm.Untick = ds.Tables["counts"].Rows[0]["@unTickets"].ToString();            
         }        
     }

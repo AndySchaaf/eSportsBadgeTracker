@@ -187,13 +187,11 @@ C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\Rede
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\RegistrationPage.g.cs
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\ScanWindow.g.cs
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\SearchUser.g.cs
-C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\stattest.g.cs
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\App.g.cs
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker_MarkupCompile.cache
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker_MarkupCompile.lref
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\LoginWindow.baml
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\RegistrationPage.baml
-C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\stattest.baml
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.g.resources
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.Properties.Resources.resources
 C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.csproj.GenerateResource.Cache
@@ -455,3 +453,6 @@ C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.g.resources
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.Properties.Resources.resources
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.csproj.GenerateResource.Cache
+C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\Statistics.g.cs
+C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\Statistics.baml

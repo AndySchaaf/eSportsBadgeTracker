@@ -32,8 +32,8 @@ public class SQLDataHandler {
             String unregi = "@UnRegistered";
             String vip = "@VIPBadges";
             String regular = "@RegBadges";
-            String loot = "@LootBags";
-            String meal = "@MealTickets";
+            String loot = "@REGBags";
+            String meal = "@VIPBags";
             String un ="@unTickets";
             
             SqlParameter registered = new SqlParameter(regi , SqlDbType.Int) { Direction = ParameterDirection.Output };

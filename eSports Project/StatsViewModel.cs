@@ -23,11 +23,12 @@ namespace eSportsBadgeTracker
         private string _registered;
         private string _checkedin;
         private string _unregistered;
-        private string _vip;
-        private string _reg;
-        private string _loot;
-        private string _meal;
+        private string _vipGuest;
+        private string _regGuest;
+        private string _REGBags;
+        private string _VIPBags;
         private string _untick;
+
         #endregion Members
 
         #region Properties
@@ -96,70 +97,70 @@ namespace eSportsBadgeTracker
             }
         }
 
-        public string Vip
+        public string VipGuest
         {
             get
             {
-                return _vip;
+                return _vipGuest;
             }
 
             set
             {
-                if (_vip != value)
+                if (_vipGuest != value)
                 {
-                    _vip = value;
-                    NotifyPropertyChanged("Vip");
+                    _vipGuest = value;
+                    NotifyPropertyChanged("VipGuest");
                 }
             }
         }
 
-        public string Reg
+        public string RegGuest
         {
             get
             {
-                return _reg;
+                return _regGuest;
             }
 
             set
             {
-                if (_reg != value)
+                if (_regGuest != value)
                 {
-                    _reg = value;
-                    NotifyPropertyChanged("Reg");
+                    _regGuest = value;
+                    NotifyPropertyChanged("RegGuest");
                 }
             }
         }
 
-        public string Loot
+        public string VIPBags
         {
             get
             {
-                return _loot;
+                return _VIPBags;
             }
 
             set
             {
-                if (_loot != value)
+                if (_VIPBags != value)
                 {
-                    _loot = value;
-                    NotifyPropertyChanged("Loot");
+                    _VIPBags = value;
+                    NotifyPropertyChanged("VIPBags");
                 }
             }
         }
 
-        public string Meal
+        public string REGBags
         {
             get
             {
-                return _meal;
+                return _REGBags;
             }
 
             set
             {
-                if (_meal != value)
+                if (_REGBags != value)
                 {
-                    _meal = value;
-                    NotifyPropertyChanged("Meal");
+                    _REGBags = value;
+                    NotifyPropertyChanged("REGBags");
                 }
             }
         }
