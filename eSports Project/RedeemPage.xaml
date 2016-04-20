@@ -1,21 +1,24 @@
 ﻿<Page x:Class="eSportsBadgeTracker.RedeemPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Redemption Page" Height="187.461" Width="272.758">
+        Title="Redemption Page" Height="187.461" Width="394.714">
     <Grid>
-        <Label x:Name="label" Content="Ticket ID:" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Height="30" Width="77" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
-        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="12" Margin="82,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="12" TextChanged="txtTicketID_TextChanged"/>
+        <Label x:Name="label" Content="Ticket ID:" HorizontalAlignment="Left" Margin="9,2,0,0" VerticalAlignment="Top" Height="30" Width="77" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
+        <TextBox x:Name="txtTicketID" HorizontalAlignment="Left" Height="12" Margin="86,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" FontSize="12" TextChanged="txtTicketID_TextChanged"/>
 
-        <ListView x:Name="listView" Margin="14,57,18,0" IsHitTestVisible="False" Focusable="False" Height="63" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListView x:Name="listView" Margin="14,64,18,0" IsHitTestVisible="False" Focusable="False" Height="63" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding tickID}" Header="Ticket" Width="75" />
-                    <GridViewColumn DisplayMemberBinding="{Binding canGetPrize}" Header="Loot Available?" Width="165" />
+                    <GridViewColumn DisplayMemberBinding="{Binding tickID}" Header="Ticket" Width="105" />
+                    <GridViewColumn DisplayMemberBinding="{Binding canGetPrize}" Header="Loot Available?" Width="260" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Grid Margin="10,126,10,10">
-            <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnPrize" Content="Redeem Prize" Margin="0,0,8,5" IsDefault="True" FontSize="16" FontWeight="Bold" Background="#FF3F8B33" Click="btnPrize_Click" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="117" BorderThickness="1" FontFamily="Segoe UI"/>
+            <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnPrize" Content="Redeem Loot" Margin="0,0,9,-1" IsDefault="True" FontSize="16" FontWeight="Bold" Background="#FF3F8B33" Click="btnPrize_Click" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="117" BorderThickness="1" FontFamily="Segoe UI"/>
+            <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnManualRedeem" Content="Manual Scan" Margin="0,0,131,-1" IsDefault="True" FontSize="16" FontWeight="Bold" Background="#FF718D6C" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="117" BorderThickness="1" FontFamily="Segoe UI" Click="btnManualRedeem_Click"/>
         </Grid>
+        <CheckBox x:Name="chkManual" Content="" HorizontalAlignment="Left" Margin="115,37,0,0" VerticalAlignment="Top" Click="chkManual_Checked"/>
+        <Label x:Name="label_Copy" Content="Manual Entry:" HorizontalAlignment="Left" Margin="9,29,0,0" VerticalAlignment="Top" Height="30" Width="108" Foreground="Black" FontWeight="Bold" FontSize="14.667"/>
     </Grid>
 </Page>

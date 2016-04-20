@@ -14,6 +14,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <CheckBox x:Name="chkManual" Content="" HorizontalAlignment="Left" Margin="374,312,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblManual" Content="Manual Entry:" HorizontalAlignment="Left" Margin="265,305,0,0" VerticalAlignment="Top" Height="30" Width="108" Foreground="Black" FontWeight="Bold" FontSize="14.667" RenderTransformOrigin="0.507,0.56"/>
         <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnCheckIn" Content="Scan Badge" Margin="409,0,0,10" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnCheckIn_Click" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="103" Background="#FF3F8B33"/>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Height="25" Width="88" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
         <TextBox x:Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

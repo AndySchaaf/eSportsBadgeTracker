@@ -8,8 +8,9 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Navigation;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
-namespace eSportsBadgeTracker {
+namespace eSportsBadgeTracker {   
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -73,14 +74,17 @@ namespace eSportsBadgeTracker {
             tabControl.Items.Remove(raffleTab);
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnExit_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             par.LogOut();
+        }
+
+        public async void ShowWinner(String winner) {
+            await this.ShowMessageAsync("The winner of the raffle is:", winner);
         }
     }
 }

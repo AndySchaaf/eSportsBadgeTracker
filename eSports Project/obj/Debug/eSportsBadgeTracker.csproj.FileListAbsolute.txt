@@ -520,3 +520,7 @@ C:\Users\Laz\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSpo
 C:\Users\Laz\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.csproj.GenerateResource.Cache
 C:\Users\Laz\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.exe
 C:\Users\Laz\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\eSportsBadgeTracker.pdb
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\RafflePage.baml
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\RafflePage.g.cs
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\ManualScanWindow.baml
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\ManualScanWindow.g.cs

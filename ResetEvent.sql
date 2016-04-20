@@ -11,3 +11,8 @@ SELECT * FROM Attendees
 SELECT * FROM CustomerInfo
 
 SELECT * FROM Tickets
+
+
+/*
+DELETE FROM CustomerInfo
+WHERE gender is null

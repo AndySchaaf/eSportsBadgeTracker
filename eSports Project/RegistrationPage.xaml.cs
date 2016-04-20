@@ -26,29 +26,37 @@ namespace eSportsBadgeTracker {
             string lName = "%%";
             string email = "%%";
 
-            if (txtFName.Text != "") {
+            if (txtFName.Text.Trim() != "") {
                 fName = txtFName.Text;
             } else {
                 MessageBox.Show("Please enter a valid first name!");
                 return;
             }
 
-            if (txtFName.Text != "") {
+            if (txtLName.Text.Trim() != "") {
                 lName = txtLName.Text;
             } else {
                 MessageBox.Show("Please enter a valid last name!");
                 return;
             }
 
-            if (txtFName.Text != "") {
+            if (txtEmail.Text.Trim() != "" && txtEmail.Text.Contains("@")) {
                 email = txtEmail.Text;
             } else {
                 MessageBox.Show("Please enter a valid email!");
                 return;
             }
 
+            String gender = "M";
+
+            if (rdFemale.IsChecked == true)
+                gender = "F";
+
+            if (rdOther.IsChecked == true)
+                gender = "O";
+
             // RUN SQL COMMAND HERE
-            sqlHandler.RegisterCustomer(fName, lName, email);
+            sqlHandler.RegisterCustomer(fName, lName, email, gender);
             txtFName.Text = "";
             txtLName.Text = "";
             txtEmail.Text = "";

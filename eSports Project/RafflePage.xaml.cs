@@ -20,6 +20,7 @@ namespace eSportsBadgeTracker {
     /// Interaction logic for RafflePage.xaml
     /// </summary>
     public partial class RafflePage : Page {
+        private MainWindow parent;
         public SQLDataHandler sqlHandler;
 
         public RafflePage() {

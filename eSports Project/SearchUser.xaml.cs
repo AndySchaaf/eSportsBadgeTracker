@@ -51,8 +51,14 @@ namespace eSportsBadgeTracker
 
         private void CheckInUser() {
             SearchUser.dispatcherTimer.IsEnabled = false;
-            ScanWindow scanWin = new ScanWindow(this);
-            scanWin.ShowDialog();
+
+            if (chkManual.IsChecked == true) {
+                ManualScanWindow scanWin = new ManualScanWindow(this);
+                scanWin.ShowDialog();
+            } else {
+                ScanWindow scanWin = new ScanWindow(this);
+                scanWin.ShowDialog();
+            }            
         }
 
         private void btnCheckIn_Click(object sender, RoutedEventArgs e) {

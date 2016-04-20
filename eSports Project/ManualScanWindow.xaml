@@ -1,0 +1,11 @@
+﻿<Controls:MetroWindow x:Class="eSportsBadgeTracker.ManualScanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Manual Badge Check In" Height="185.796" Width="300" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black">
+    <Grid Background="#FF3F3F46">
+        <TextBox x:Name="txtScanID" Margin="18,0,18,50" TextWrapping="Wrap" Height="42" VerticalAlignment="Bottom" FontSize="14"/>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnScan" Content="Check In" Margin="0,0,18,6" IsDefault="True" FontSize="16" FontWeight="Bold" Background="#FF3F8B33" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="117" BorderThickness="1" FontFamily="Segoe UI" Click="btnScan_Click"/>
+        <Label Content="Enter Badge Number" Margin="18,0,18,102" FontSize="24" Background="{x:Null}" Foreground="White" Height="43" VerticalAlignment="Bottom"/>
+    </Grid>
+</Controls:MetroWindow>
