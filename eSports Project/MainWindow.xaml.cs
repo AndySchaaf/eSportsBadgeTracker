@@ -64,6 +64,7 @@ namespace eSportsBadgeTracker {
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(scanTab);
             tabControl.Items.Remove(raffleTab);
+            tabControl.Items.Remove(addBadgeTab);
             btnExit.IsEnabled = false;
             btnExit.Visibility = Visibility.Hidden;
         }
@@ -72,6 +73,7 @@ namespace eSportsBadgeTracker {
         {
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(raffleTab);
+            tabControl.Items.Remove(addBadgeTab);
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e) {
@@ -81,10 +83,6 @@ namespace eSportsBadgeTracker {
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             par.LogOut();
-        }
-
-        public async void ShowWinner(String winner) {
-            await this.ShowMessageAsync("The winner of the raffle is:", winner);
         }
     }
 }

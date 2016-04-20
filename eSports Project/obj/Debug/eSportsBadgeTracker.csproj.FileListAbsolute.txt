@@ -524,3 +524,5 @@ C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\RafflePage.g.cs
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\ManualScanWindow.baml
 C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\ManualScanWindow.g.cs
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\AddBadge.baml
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\AddBadge.g.cs

@@ -49,6 +49,17 @@
                     </Viewbox>
                 </Grid>
             </TabItem>
+            <TabItem x:Name="addBadgeTab" Header="Add Badge" Margin="0" Padding="17,2">
+                <Grid Background="#FFE6E6E6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="265*"/>
+                        <ColumnDefinition Width="622*"/>
+                    </Grid.ColumnDefinitions>
+                    <Viewbox Grid.ColumnSpan="2">
+                        <Frame x:Name="frame6" Content="Frame" Source="/eSportsBadgeTracker;component/AddBadge.xaml" Height="350" Width="520"/>
+                    </Viewbox>
+                </Grid>
+            </TabItem>
         </TabControl>
         <Viewbox Height="665" VerticalAlignment="Bottom">
             <Grid Margin="15,599,17,10" Width="890">
