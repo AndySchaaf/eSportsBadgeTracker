@@ -24,6 +24,7 @@ namespace eSportsBadgeTracker {
         private DispatcherTimer _timer;
         private DateTime _lastBarCodeCharReadTime;
         public static TextBox txtScanner;
+        private bool manual = false;
 
         public RedeemPage() {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace eSportsBadgeTracker {
             _timer.Tick += new EventHandler(Timer_Tick);
             txtScanner = txtTicketID;
             txtTicketID.Focus();
+            btnManualRedeem.Visibility = Visibility.Hidden;
         }
 
         private void Timer_Tick(object sender, EventArgs e) {
@@ -48,6 +50,10 @@ namespace eSportsBadgeTracker {
         }
 
         private void txtTicketID_TextChanged(object sender, TextChangedEventArgs e) {
+            if (manual) {
+                return;
+            }
+
             if (isScanning)
                 return;
 
@@ -93,16 +99,32 @@ namespace eSportsBadgeTracker {
             dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", txtTicketID.Text));
             // dt = sqlHandler.fillDataTable(String.Format("FindTicketInfo '{0}'", "1"));
             if (dt.Rows.Count > 0) {
-                bool meal = (bool)dt.Rows[0]["Meal"];
+                //bool meal = (bool)dt.Rows[0]["Meal"];
                 bool prize = (bool)dt.Rows[0]["canGetPrize"];
-                dt.Rows[0]["Meal"] = !meal;
-                dt.Rows[0]["canGetPrize"] = !prize;
+                //dt.Rows[0]["Meal"] = !meal;
+                dt.Rows[0]["canGetPrize"] = prize;
                 listView.ItemsSource = dt.DefaultView;
             } else {
                 MessageBox.Show("ERROR: Ticket is not registered");
             }
             txtTicketID.Focus();
             txtTicketID.SelectAll();
+        }
+
+        private void btnManualRedeem_Click(object sender, RoutedEventArgs e) {
+            RefreshUI();
+        }
+
+        private void chkManual_Checked(object sender, RoutedEventArgs e) {
+            if (chkManual.IsChecked == true) {
+                manual = true;
+                btnManualRedeem.Visibility = Visibility.Visible;
+            }
+            else {
+                manual = false;
+                btnManualRedeem.Visibility = Visibility.Hidden;
+
+            }
         }
     }
 }

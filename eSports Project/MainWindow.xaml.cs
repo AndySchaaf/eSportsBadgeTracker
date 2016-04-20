@@ -8,8 +8,9 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Navigation;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
-namespace eSportsBadgeTracker {
+namespace eSportsBadgeTracker {   
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -62,6 +63,8 @@ namespace eSportsBadgeTracker {
             tabControl.Items.Remove(assignTab);
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(scanTab);
+            tabControl.Items.Remove(raffleTab);
+            tabControl.Items.Remove(addBadgeTab);
             btnExit.IsEnabled = false;
             btnExit.Visibility = Visibility.Hidden;
         }
@@ -69,10 +72,11 @@ namespace eSportsBadgeTracker {
         private void SetUserView()
         {
             tabControl.Items.Remove(statsTab);
+            tabControl.Items.Remove(raffleTab);
+            tabControl.Items.Remove(addBadgeTab);
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnExit_Click(object sender, RoutedEventArgs e) {
             this.Close();
         }
 

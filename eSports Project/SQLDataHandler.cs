@@ -32,8 +32,8 @@ public class SQLDataHandler {
             String unregi = "@UnRegistered";
             String vip = "@VIPBadges";
             String regular = "@RegBadges";
-            String loot = "@REGBags";
-            String meal = "@VIPBags";
+            String loot = "@VIPBags";
+            String regBag = "@REGBags";
             String un ="@unTickets";
             
             SqlParameter registered = new SqlParameter(regi , SqlDbType.Int) { Direction = ParameterDirection.Output };
@@ -48,8 +48,8 @@ public class SQLDataHandler {
             cmd.Parameters.Add(RegBadges);
             SqlParameter LootBags = new SqlParameter( loot , SqlDbType.Int) { Direction = ParameterDirection.Output };
             cmd.Parameters.Add(LootBags);
-            SqlParameter MealTickets  = new SqlParameter( meal, SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(MealTickets);
+            SqlParameter RegBags  = new SqlParameter(regBag, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(RegBags);
             SqlParameter unTickets = new SqlParameter( un , SqlDbType.Int) { Direction = ParameterDirection.Output };
             cmd.Parameters.Add(unTickets);
 
@@ -103,7 +103,8 @@ public class SQLDataHandler {
     }
 
     public string CheckInUser(string customerID, string ticketID) {
-        string result = checkData("CheckInCustomer '" + customerID + "', '" + ticketID + "';");
+        String query = "CheckInCustomer '" + customerID + "', '" + ticketID + "';";
+        string result = checkData(query);
         if (result.ToLower().Contains("success")) {
             AutoClosingMessageBox.Show(result, "Scan Results", 1000);
         } else {
@@ -132,8 +133,9 @@ public class SQLDataHandler {
         return result;
     }
 
-    public string RegisterCustomer(string fName, string lName, string email, bool isVIP = false) {
-        string result = checkData("RegisterCustomer '" + fName + "', '" + lName + "', '" + email + "', " + Convert.ToInt32(isVIP) + ";");
+    public string RegisterCustomer(string fName, string lName, string email, string gender, bool isVIP = false) {
+        String query = "RegisterCustomer '" + fName + "', '" + lName + "', '" + email + "', '" + gender + "', " + Convert.ToInt32(isVIP) + ";";
+        string result = checkData(query);
         if (result.ToLower().Contains("success")) {
             AutoClosingMessageBox.Show(result, "Scan Results", 1000);
         } else {

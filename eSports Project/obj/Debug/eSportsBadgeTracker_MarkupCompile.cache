@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\obj\Debug\
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\obj\Debug\
 eSportsBadgeTracker
 none
 false
 DEBUG;TRACE
-C:\Users\Gabriel\Source\Repos\eSportsBadgeTracker\eSports Project\App.xaml
-7569942395
+C:\Users\lpadron\Documents\GitHub\eSportsBadgeTracker\eSports Project\App.xaml
+101122282486
 
-13465847559
-2279068329
-LoginWindow.xaml;MainWindow.xaml;RedeemPage.xaml;RegistrationPage.xaml;ScanWindow.xaml;SearchUser.xaml;Statistics.xaml;
+162018212836
+22-1662634128
+AddBadge.xaml;LoginWindow.xaml;MainWindow.xaml;ManualScanWindow.xaml;RafflePage.xaml;RedeemPage.xaml;RegistrationPage.xaml;ScanWindow.xaml;SearchUser.xaml;Statistics.xaml;
 
 False
 

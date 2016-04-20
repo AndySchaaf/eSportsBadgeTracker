@@ -1,8 +1,9 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,42 +12,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
-using MahApps.Metro.Controls;
 
-namespace eSportsBadgeTracker
-{
+namespace eSportsBadgeTracker {
     /// <summary>
-    /// Interaction logic for ScanWindow.xaml
+    /// Interaction logic for ManualScanWindow.xaml
     /// </summary>
-    public partial class ScanWindow : MetroWindow {
+    public partial class ManualScanWindow : MetroWindow {
         public SearchUser page;
         private bool isScanning = false;
-        private DispatcherTimer _timer;
         private DateTime _lastBarCodeCharReadTime;
 
-        public ScanWindow(SearchUser p)
-        {
+        public ManualScanWindow(SearchUser p) {
             InitializeComponent();
             page = p;
             txtScanID.Focus();
-            _timer = new DispatcherTimer();
-            _timer.Interval = new TimeSpan(0, 0, 1);
-            _timer.Tick += new EventHandler(Timer_Tick);
         }
 
-        /// <summary>
-        /// Checks every tick (Default was 1 second)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Timer_Tick(object sender, EventArgs e) {
-            const int timeout = 500;
-            DateTime _dateTimeNow = DateTime.Now;
-            if (_dateTimeNow < _lastBarCodeCharReadTime.AddMilliseconds(timeout))
-                return;
-
+        private void btnScan_Click(object sender, RoutedEventArgs e) {
             // Check in the User after timeout
             if (page.selectedIndex > -1) {
                 DataRowView selectedRow = page.listView.Items.GetItemAt(page.selectedIndex) as DataRowView;
@@ -66,19 +50,6 @@ namespace eSportsBadgeTracker
             } else {
                 MessageBox.Show("Please select a valid user!");
             }
-            isScanning = false;
-            _timer.Stop();
-        }
-
-        private void txtScanID_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (isScanning)
-                return;
-
-            isScanning = true;
-            _lastBarCodeCharReadTime = DateTime.Now;
-            if (!_timer.IsEnabled)
-                _timer.Start();
         }
     }
 }
