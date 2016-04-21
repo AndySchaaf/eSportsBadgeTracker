@@ -6,7 +6,6 @@
       xmlns:winformchart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
       xmlns:local="clr-namespace:eSportsBadgeTracker"
       mc:Ignorable="d" 
-      d:DesignHeight="380" d:DesignWidth="520"
       Title="Statistics">
 
 
@@ -14,66 +13,52 @@
         <StackPanel>
             <Label x:Name="label7_Copy" Content="Statistics" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,0,0,0" FontSize="13.333"/>
             <WindowsFormsHost x:Name="host" VerticalAlignment="Top" Height="90" Margin="20,5">
-                <winformchart:Chart x:Name="MyWinformChart" Dock="Fill" BorderlineColor="SlateGray" >
+                <winformchart:Chart x:Name="CheckIn" Dock="Fill" BorderlineColor="SlateGray" >
                     <winformchart:Chart.Series>
-                        <winformchart:Series Name="counts" ChartType="Line" XValueType="Time" ChartArea="regCount" />
+                        <winformchart:Series Name="CheckinTime" ChartType="Line" XValueType="Time" ChartArea= "Checkin" />
                     </winformchart:Chart.Series>
                     <winformchart:Chart.ChartAreas>
-                        <winformchart:ChartArea Name="regCount" />
+                        <winformchart:ChartArea Name="Checkin" />
                     </winformchart:Chart.ChartAreas>
                 </winformchart:Chart>
             </WindowsFormsHost>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Label x:Name="label1" Content="Registered:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label2" Content="{Binding Registered}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label5" Content="Registered today:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
-                <Label x:Name="label6" Content="{Binding Unregistered}" HorizontalAlignment="Center" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
-                <Label x:Name="label3" Content="Checked-in:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label4" Content="{Binding CheckedIn}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label7_Copy1" Content="VIPs:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label8_Copy" Content="{Binding Vip}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label9_Copy" Content="Regular Guests:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label10_Copy" Content="{Binding Reg}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="43.545,0">
+                <Label x:Name="Registered" Content="Registered:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="reg_val" Content="{Binding Registered}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="checked_in" Content="Checked-in:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="checked_in_val" Content="{Binding Checkedin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="VIPs" Content="VIPs:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="VIPs_val" Content="{Binding Vip}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="Regular_Guests" Content="Regular Guests:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="Regular_Guest_val" Content="{Binding Regular}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="walk_ins" Content="Walk-in Guests:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
+                <Label x:Name="walk_in_val" Content="{Binding Walkin}" HorizontalAlignment="Center" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
             </StackPanel>
             <WindowsFormsHost x:Name="host2" Height="90" Margin="20,5">
-                <winformchart:Chart x:Name="MyWinformChart2" Dock="Fill" BorderlineColor="SlateGray" >
+                <winformchart:Chart x:Name="BagPickup" Dock="Fill" BorderlineColor="SlateGray" >
                     <winformchart:Chart.Series>
-                        <winformchart:Series Name="mealsCollected" ChartType="Line" XValueType="Time" ChartArea="mealCount"/>
+                        <winformchart:Series Name="BagsTimePickup" ChartType="Line" XValueType="Time" ChartArea="Bag"/>
                     </winformchart:Chart.Series>
                     <winformchart:Chart.ChartAreas>
-                        <winformchart:ChartArea Name="mealCount" />
+                        <winformchart:ChartArea Name="Bag" />
                     </winformchart:Chart.ChartAreas>
                 </winformchart:Chart>
             </WindowsFormsHost>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Label x:Name="label7" Content="Bags Collected:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label8" Content="{Binding Bags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label9" Content="VIP Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label10" Content="{Binding VIPBags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="label11" Content="Regular Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
-                <Label x:Name="label12" Content="{Binding REGBags}" HorizontalAlignment="Center" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
+                <Label x:Name="Bag_Redeemed" Content="Bags Collected:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="Bag_Redeemed_val" Content="{Binding Totbags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="Vip_Bags" Content="VIP Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="VIP_Bags_val" Content="{Binding Vipbags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
+                <Label x:Name="Regular_Bags" Content="Regular Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
+                <Label x:Name="Regular_Bags_Value" Content="{Binding Regbags}" HorizontalAlignment="Left" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
             </StackPanel>
-            <StackPanel Height="100" Orientation="Horizontal">
-                <WindowsFormsHost x:Name="host3" Height="90" Margin="20,5,0,5" Width="390" HorizontalAlignment="Left">
-                    <winformchart:Chart x:Name="MyWinformChart1" Dock="Fill" BorderlineColor="SlateGray" >
-                        <winformchart:Chart.Series>
-                            <winformchart:Series Name="mealsCollected" ChartType="Line" XValueType="Time" ChartArea="mealCount"/>
-                        </winformchart:Chart.Series>
-                        <winformchart:Chart.ChartAreas>
-                            <winformchart:ChartArea Name="mealCount" />
-                        </winformchart:Chart.ChartAreas>
-                    </winformchart:Chart>
-                </WindowsFormsHost>
-                <WindowsFormsHost x:Name="host4" Height="90" Margin="0,5,5,5" Width="90">
-                    <winformchart:Chart x:Name="MyWinformChart3" Dock="Fill" BorderlineColor="SlateGray" >
-                        <winformchart:Chart.Series>
-                            <winformchart:Series Name="mealsCollected" ChartType="Line" XValueType="Time" ChartArea="mealCount"/>
-                        </winformchart:Chart.Series>
-                        <winformchart:Chart.ChartAreas>
-                            <winformchart:ChartArea Name="mealCount" />
-                        </winformchart:Chart.ChartAreas>
-                    </winformchart:Chart>
-                </WindowsFormsHost>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="8.243,0">
+                <Label x:Name="males1" Content="Males:" FontSize="9" Margin="5"/>
+                <Label x:Name="males_val1" Content="{Binding Male}" FontSize="9" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="Females1" Content="Females:" FontSize="9" Margin="5"/>
+                <Label x:Name="femal_val1" Content="{Binding Female}" FontSize="9" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="Other1" Content="Other:" FontSize="9" Margin="5"/>
+                <Label x:Name="other_val1" Content="{Binding Other}" FontSize="9" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -11,17 +11,10 @@ namespace eSportsBadgeTracker
 
     public partial class Statistics : Page
     {
-        //@Registered int output,
-        //@CheckedIn int output,
-        //@UnRegistered int output,
-        //@VIPBadges int output,
-        //@RegBadges int output,
-        //@LootBags int output,
-        //@MealTickets int output,
-        //@unTickets int output
 
-        String area1 = "regCount";
-        String area2 = "mealCount";
+        String bag = "Bag";
+        String checkin = "Checkin";
+
         SQLDataHandler dh = new SQLDataHandler();
         StatsViewModel vm;
         DataSet ds;
@@ -29,28 +22,23 @@ namespace eSportsBadgeTracker
 
         public Statistics()
         {
-            Focusable = true;
-
             InitializeComponent();
             vm = new StatsViewModel();
             this.DataContext = vm;
             UpdateData();
 
-            Chart chart = this.FindName("MyWinformChart") as Chart;
-            Chart chart2 = this.FindName("MyWinformChart2") as Chart;
-            Chart chart3 = this.FindName("MyWinformChart3") as Chart;
+            Chart chart = this.FindName("CheckIn") as Chart;
+            Chart chart2 = this.FindName("BagPickup") as Chart;
 
-            chart.ChartAreas[area1].AxisX.LabelStyle.Angle = 90;
-            chart.ChartAreas[area1].AxisX.LabelStyle.Format = "HH:mm:ss";
+            chart.ChartAreas[checkin].AxisX.LabelStyle.Angle = 90;
+            chart.ChartAreas[checkin].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart.DataBindTable((ds.Tables["Table"] as System.ComponentModel.IListSource).GetList(), "5minutes");
 
-            chart2.ChartAreas[area2].AxisX.LabelStyle.Angle = 90;
-            chart2.ChartAreas[area2].AxisX.LabelStyle.Format = "HH:mm";
-            chart2.DataBindTable((ds.Tables["Table1"] as System.ComponentModel.IListSource).GetList(), "15minutes");
+            chart2.ChartAreas[bag].AxisX.LabelStyle.Angle = 90;
+            chart2.ChartAreas[bag].AxisX.LabelStyle.Format = "HH:mm";
+            chart2.DataBindTable((ds.Tables["Table1"] as System.ComponentModel.IListSource).GetList(), "5minutes");
 
-            chart2.ChartAreas[area2].AxisX.LabelStyle.Angle = 90;
-            chart2.ChartAreas[area2].AxisX.LabelStyle.Format = "HH:mm";
-            chart2.DataBindTable((ds.Tables["Table3"] as System.ComponentModel.IListSource).GetList(), "Age");
+
 
 
 
@@ -68,13 +56,16 @@ namespace eSportsBadgeTracker
         {
             ds = dh.loadStatData();
             vm.Registered = ds.Tables["counts"].Rows[0]["@Registered"].ToString();
-            vm.CheckedIn = ds.Tables["counts"].Rows[0]["@CheckedIn"].ToString();
-            vm.Unregistered = ds.Tables["counts"].Rows[0]["@UnRegistered"].ToString();
-            vm.VipGuest = ds.Tables["counts"].Rows[0]["@VIPBadges"].ToString();
-            vm.RegGuest = ds.Tables["counts"].Rows[0]["@RegBadges"].ToString();
-            vm.VIPBags = ds.Tables["counts"].Rows[0]["@VIPBags"].ToString();
-            vm.REGBags = ds.Tables["counts"].Rows[0]["@REGBags"].ToString();
-            vm.Untick = ds.Tables["counts"].Rows[0]["@unTickets"].ToString();            
-        }        
+            vm.Checkedin = ds.Tables["counts"].Rows[0]["@CheckedIn"].ToString();
+            vm.Walkin = ds.Tables["counts"].Rows[0]["@Walkin"].ToString();
+            vm.Vip = ds.Tables["counts"].Rows[0]["@VIPs"].ToString();
+            vm.Regular = ds.Tables["counts"].Rows[0]["@Regular"].ToString();
+            vm.Vipbags = ds.Tables["counts"].Rows[0]["@VIPBags"].ToString();
+            vm.Regbags = ds.Tables["counts"].Rows[0]["@REGBags"].ToString();
+            vm.Totbags = ds.Tables["counts"].Rows[0]["@TOTBags"].ToString();
+            vm.Male = ds.Tables["counts"].Rows[0]["@Males"].ToString();
+            vm.Female = ds.Tables["counts"].Rows[0]["@Females"].ToString();
+            vm.Other = ds.Tables["counts"].Rows[0]["@Other"].ToString();
+        }
     }
 }

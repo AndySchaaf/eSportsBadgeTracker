@@ -22,13 +22,15 @@ namespace eSportsBadgeTracker
         #region Members
         private string _registered;
         private string _checkedin;
-        private string _unregistered;
-        private string _vipGuest;
-        private string _regGuest;
-        private string _REGBags;
-        private string _VIPBags;
-        private string _untick;
-
+        private string _walkin;
+        private string _vip;
+        private string _regular;
+        private string _regbags;
+        private string _vipbags;
+        private string _totbags;
+        private string _male;
+        private string _female;
+        private string _other;
         #endregion Members
 
         #region Properties
@@ -38,136 +40,152 @@ namespace eSportsBadgeTracker
             {
                 return _registered;
             }
+
             set
             {
-                if (_registered != value) { 
-                    _registered = value;
-                    NotifyPropertyChanged("Registered");
-                }
+                changeCheck(ref _registered,ref value,"Registered");
             }
         }
 
-        public string CheckedIn
+        public string Checkedin
         {
             get
             {
                 return _checkedin;
             }
+
             set
             {
-                if (_checkedin  != value)
-                {
-                    _checkedin = value;
-                    NotifyPropertyChanged("CheckedIn");
-                }
+                changeCheck(ref _checkedin, ref value, "Checkedin" );
             }
         }
 
-        public string Untick
+        public string Walkin
         {
             get
             {
-                return _untick;
+                return _walkin;
             }
 
             set
             {
-                if (_untick != value)
-                {
-                    _untick = value;
-                    NotifyPropertyChanged("Untick");
-                }
+                changeCheck(ref _walkin ,ref value , "Walkin");
             }
         }
 
-        public string Unregistered
+        public string Vip
         {
             get
             {
-                return _unregistered;
+                return _vip;
             }
 
             set
             {
-                if (_unregistered != value)
-                {
-                    _unregistered = value;
-                    NotifyPropertyChanged("Unregistered");
-                }
+                changeCheck(ref _vip ,ref value , "Vip");
             }
         }
 
-        public string VipGuest
+        public string Regular
         {
             get
             {
-                return _vipGuest;
+                return _regular;
             }
 
             set
             {
-                if (_vipGuest != value)
-                {
-                    _vipGuest = value;
-                    NotifyPropertyChanged("VipGuest");
-                }
+                changeCheck(ref _regular,ref  value,"Regular");
             }
         }
 
-        public string RegGuest
+        public string Regbags
         {
             get
             {
-                return _regGuest;
+                return _regbags;
             }
 
             set
             {
-                if (_regGuest != value)
-                {
-                    _regGuest = value;
-                    NotifyPropertyChanged("RegGuest");
-                }
+                changeCheck(ref _regbags, ref value, "Regbags");
             }
         }
 
-        public string VIPBags
+        public string Vipbags
         {
             get
             {
-                return _VIPBags;
+                return _vipbags;
             }
 
             set
             {
-                if (_VIPBags != value)
-                {
-                    _VIPBags = value;
-                    NotifyPropertyChanged("VIPBags");
-                }
+                changeCheck(ref _vipbags, ref value, "Vipbags");
             }
         }
 
-        public string REGBags
+        public string Totbags
         {
             get
             {
-                return _REGBags;
+                return _totbags;
             }
 
             set
             {
-                if (_REGBags != value)
-                {
-                    _REGBags = value;
-                    NotifyPropertyChanged("REGBags");
-                }
+                changeCheck(ref _totbags, ref value, "Totbags");
             }
         }
 
+        public string Male
+        {
+            get
+            {
+                return _male;
+            }
+
+            set
+            {
+                changeCheck(ref _male, ref value, "Male");
+            }
+        }
+
+        public string Female
+        {
+            get
+            {
+                return _female;
+            }
+
+            set
+            {
+                changeCheck(ref _female, ref value, "Female");
+            }
+        }
+
+        public string Other
+        {
+            get
+            {
+                return _other;
+            }
+
+            set
+            {
+                changeCheck(ref _other, ref value, "Other");
+            }
+        }
         #endregion Properties
 
         public StatsViewModel() { }
+        private void changeCheck(ref string orig , ref string val , string propertyName) {
+            if(!EqualityComparer<string>.Default.Equals(orig, val))
+            {
+                orig = val;
+                NotifyPropertyChanged(propertyName);
+            }
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

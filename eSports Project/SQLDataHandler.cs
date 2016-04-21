@@ -27,31 +27,10 @@ public class SQLDataHandler {
     public DataSet loadStatData() {
         using (SqlCommand cmd = new SqlCommand("GetStatisticsCounts", con)) {
 
-            String regi = "@Registered";
-            String checked1 = "@CheckedIn";
-            String unregi = "@UnRegistered";
-            String vip = "@VIPBadges";
-            String regular = "@RegBadges";
-            String loot = "@VIPBags";
-            String regBag = "@REGBags";
-            String un ="@unTickets";
-            
-            SqlParameter registered = new SqlParameter(regi , SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(registered);
-            SqlParameter CheckedIn = new SqlParameter( checked1 , SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(CheckedIn);
-            SqlParameter UnRegistered = new SqlParameter( unregi, SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(UnRegistered);
-            SqlParameter VIPBadges  = new SqlParameter( vip, SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(VIPBadges);
-            SqlParameter RegBadges  = new SqlParameter( regular , SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(RegBadges);
-            SqlParameter LootBags = new SqlParameter( loot , SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(LootBags);
-            SqlParameter RegBags  = new SqlParameter(regBag, SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(RegBags);
-            SqlParameter unTickets = new SqlParameter( un , SqlDbType.Int) { Direction = ParameterDirection.Output };
-            cmd.Parameters.Add(unTickets);
+            String[] parameters = {"@Registered", "@CheckedIn" , "@VIPs", "@Regular", "@Walkin" , "@REGBags",
+                "@VIPBags", "@TOTBags", "@Males" , "@Females" , "@Other" };
+
+            AddOutParams(cmd, parameters);
 
             cmd.CommandType = CommandType.StoredProcedure;
             reader = new SqlDataAdapter(cmd);
@@ -61,6 +40,7 @@ public class SQLDataHandler {
             return ds;
         }
     }
+
 
     public DataTable fillDataTable(string sql) {
         //Excecutes SQL query and returns the datatable 
@@ -169,6 +149,15 @@ public class SQLDataHandler {
         }
         table.Rows.Add(row);
         return table;
+    }
+
+    private void AddOutParams(SqlCommand cmd ,string[] param) {
+        foreach (string p in param)
+        {
+            SqlParameter parameter = new SqlParameter(p, SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(parameter);
+        }
+
     }
 
     // Found this one online
