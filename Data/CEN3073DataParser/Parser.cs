@@ -20,17 +20,27 @@ namespace CEN3073DataParser
 
             using (StreamWriter file = new StreamWriter(Environment.CurrentDirectory + @"\output.txt"))
             {
-                for (int row = 1; row <= range.Rows.Count; row++)
+                //Start at row 2 (there are headers)
+                for (int row = 2; row <= range.Rows.Count; row++)
                 {
                     List<string> list = new List<string>();
-                    for (int col = 1; col <= range.Columns.Count; col++)
-                    {
-                        string str = (string)(range.Cells[row, col] as Excel.Range).Value2;
-                        list.Add("'" + str + "'");
-                        //Need to make sure only the fname lname email and gender are added to the list
-                    }
-                    string sql = "INSERT INTO CustomerInfo (fName,lName,email) VALUES (" + string.Join(",", list) + ");";
+                    string str = (string)(range.Cells[row, 13] as Excel.Range).Value2; //fname 
+                    list.Add("'" + str + "'");
+
+                    str = (string)(range.Cells[row, 14] as Excel.Range).Value2; //lname
+                    list.Add("'" + str + "'");
+                    
+                    str = (string)(range.Cells[row, 15] as Excel.Range).Value2; //email
+                    list.Add("'" + str + "'");
+
+                    str = (string)(range.Cells[row, 30] as Excel.Range).Value2; //gender
+                    list.Add("'" + str + "'");
+
+                    list.Add("1"); //Adds value 1 to preregistered
+                    string sql = "INSERT INTO CustomerInfo (fName,lName,email,gender,preregistered) VALUES (" + string.Join(",", list) + ");";
+                    //Write sql to file
                     file.WriteLine(sql);
+                    //Write sql to database
                     conn.excecuteData(sql);
                 }
             }
