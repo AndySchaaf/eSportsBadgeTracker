@@ -30,12 +30,19 @@ namespace eSportsBadgeTracker
         {
             InitializeComponent();
             page = p;
-            txtScanID.Focus();
-            _timer = new DispatcherTimer();
-            _timer.Interval = new TimeSpan(0, 0, 1);
-            _timer.Tick += new EventHandler(Timer_Tick);
+            DataRowView selectedRow = page.listView.Items.GetItemAt(page.selectedIndex) as DataRowView;
+            string custID = selectedRow["CustomerID"].ToString();
+            string test = page.sqlHandler.CheckInUser(custID, "nobadge");
+
+            if (test.ToLower().Contains("success")) {
+                page.RefreshUI();
+                SearchUser.dispatcherTimer.IsEnabled = true;                
+            }
+
+            this.Close();
         }
 
+        /*
         /// <summary>
         /// Checks every tick (Default was 1 second)
         /// </summary>
@@ -52,7 +59,7 @@ namespace eSportsBadgeTracker
                 DataRowView selectedRow = page.listView.Items.GetItemAt(page.selectedIndex) as DataRowView;
                 string custID = selectedRow["CustomerID"].ToString();
                 // DEBUG: No real badges yet, use 1
-                string test = page.sqlHandler.CheckInUser(custID, txtScanID.Text);
+                string test = page.sqlHandler.CheckInUser(custID, "nobadge");
                 // string test = page.sqlHandler.CheckInUser(custID, "1");
 
                 if (test.ToLower().Contains("success")) {
@@ -80,5 +87,6 @@ namespace eSportsBadgeTracker
             if (!_timer.IsEnabled)
                 _timer.Start();
         }
+        */
     }
 }

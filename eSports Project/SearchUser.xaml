@@ -14,15 +14,13 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <CheckBox x:Name="chkManual" Content="" HorizontalAlignment="Left" Margin="374,312,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblManual" Content="Manual Entry:" HorizontalAlignment="Left" Margin="265,305,0,0" VerticalAlignment="Top" Height="30" Width="108" Foreground="Black" FontWeight="Bold" FontSize="14.667" RenderTransformOrigin="0.507,0.56"/>
-        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnCheckIn" Content="Scan Badge" Margin="409,0,0,10" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnCheckIn_Click" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="103" Background="#FF3F8B33"/>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnCheckIn" Content="Check In" Margin="409,0,0,10" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnCheckIn_Click" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="103" Background="#FF3F8B33"/>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Height="25" Width="88" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
         <TextBox x:Name="txtFName" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label_Copy" Content="Last Name" Margin="140,8,287,0" VerticalAlignment="Top" Height="25" Foreground="Black" FontWeight="Bold" FontSize="13.333"/>
         <TextBox x:Name="txtLName" Height="23" Margin="145,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Label x:Name="label_Copy1" Content="Email" Margin="0,8,153,0" VerticalAlignment="Top" Height="25" Foreground="Black" FontWeight="Bold" FontSize="13.333" HorizontalAlignment="Right" Width="88"/>
         <TextBox x:Name="txtEmail" Margin="279,33,116,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnSearch" Content="Search" Margin="426,0,0,289" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnSearch_Click" Height="42" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="86" Background="#CC348CAE"/>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" x:Name="btnSearch" Content="Search" Margin="426,0,0,284" IsDefault="True" FontSize="13.333" FontWeight="Bold" Click="btnSearch_Click" Height="42" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="86" Background="#CC348CAE"/>
     </Grid>
 </Page>

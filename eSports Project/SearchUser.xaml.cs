@@ -52,13 +52,14 @@ namespace eSportsBadgeTracker
         private void CheckInUser() {
             SearchUser.dispatcherTimer.IsEnabled = false;
 
-            if (chkManual.IsChecked == true) {
-                ManualScanWindow scanWin = new ManualScanWindow(this);
-                scanWin.ShowDialog();
-            } else {
-                ScanWindow scanWin = new ScanWindow(this);
-                scanWin.ShowDialog();
-            }            
+            DataRowView selectedRow = listView.Items.GetItemAt(selectedIndex) as DataRowView;
+            string custID = selectedRow["CustomerID"].ToString();
+            string test = sqlHandler.CheckInUser(custID, "nobadge");
+
+            if (test.ToLower().Contains("success")) {
+                RefreshUI();
+                SearchUser.dispatcherTimer.IsEnabled = true;
+            }
         }
 
         private void btnCheckIn_Click(object sender, RoutedEventArgs e) {

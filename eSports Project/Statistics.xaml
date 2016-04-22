@@ -6,12 +6,12 @@
       xmlns:winformchart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
       xmlns:local="clr-namespace:eSportsBadgeTracker"
       mc:Ignorable="d" 
-      Title="Statistics">
+      Title="Statistics" Height="268.398">
 
 
-    <Grid>
+    <Grid Margin="0,41,0,0">
         <StackPanel>
-            <Label x:Name="label7_Copy" Content="Statistics" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,0,0,0" FontSize="13.333"/>
+            <Label x:Name="label7_Copy" Content="Check In Statistics" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,0,0,0" FontSize="13.333"/>
             <WindowsFormsHost x:Name="host" VerticalAlignment="Top" Height="90" Margin="20,5">
                 <winformchart:Chart x:Name="CheckIn" Dock="Fill" BorderlineColor="SlateGray" >
                     <winformchart:Chart.Series>
@@ -22,7 +22,7 @@
                     </winformchart:Chart.ChartAreas>
                 </winformchart:Chart>
             </WindowsFormsHost>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="43.545,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="37,0,21,0" Width="461">
                 <Label x:Name="Registered" Content="Registered:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
                 <Label x:Name="reg_val" Content="{Binding Registered}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
                 <Label x:Name="checked_in" Content="Checked-in:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
@@ -33,24 +33,6 @@
                 <Label x:Name="Regular_Guest_val" Content="{Binding Regular}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
                 <Label x:Name="walk_ins" Content="Walk-in Guests:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
                 <Label x:Name="walk_in_val" Content="{Binding Walkin}" HorizontalAlignment="Center" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
-            </StackPanel>
-            <WindowsFormsHost x:Name="host2" Height="90" Margin="20,5">
-                <winformchart:Chart x:Name="BagPickup" Dock="Fill" BorderlineColor="SlateGray" >
-                    <winformchart:Chart.Series>
-                        <winformchart:Series Name="BagsTimePickup" ChartType="Line" XValueType="Time" ChartArea="Bag"/>
-                    </winformchart:Chart.Series>
-                    <winformchart:Chart.ChartAreas>
-                        <winformchart:ChartArea Name="Bag" />
-                    </winformchart:Chart.ChartAreas>
-                </winformchart:Chart>
-            </WindowsFormsHost>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                <Label x:Name="Bag_Redeemed" Content="Bags Collected:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="Bag_Redeemed_val" Content="{Binding Totbags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="Vip_Bags" Content="VIP Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="VIP_Bags_val" Content="{Binding Vipbags}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9"/>
-                <Label x:Name="Regular_Bags" Content="Regular Bags:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5" FontSize="9" />
-                <Label x:Name="Regular_Bags_Value" Content="{Binding Regbags}" HorizontalAlignment="Left" Margin="5,5" VerticalAlignment="Top" FontSize="9"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="8.243,0">
                 <Label x:Name="males1" Content="Males:" FontSize="9" Margin="5"/>

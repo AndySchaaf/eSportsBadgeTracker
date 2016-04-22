@@ -2,9 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Please scan now..." Height="96.426" Width="300" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black">
+        Title="Checking in user..." Height="96.426" Width="300" HorizontalAlignment="Left" Background="#FF404040" BorderBrush="Black">
     <Grid Background="#FF3F3F46">
-        <TextBox x:Name="txtScanID" Margin="30,0,34,10" TextWrapping="Wrap" Height="42" VerticalAlignment="Bottom" FontSize="14" TextChanged="txtScanID_TextChanged"/>
-
+        
     </Grid>
 </Controls:MetroWindow>

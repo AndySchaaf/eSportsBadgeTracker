@@ -28,19 +28,10 @@ namespace eSportsBadgeTracker
             UpdateData();
 
             Chart chart = this.FindName("CheckIn") as Chart;
-            Chart chart2 = this.FindName("BagPickup") as Chart;
 
             chart.ChartAreas[checkin].AxisX.LabelStyle.Angle = 90;
             chart.ChartAreas[checkin].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart.DataBindTable((ds.Tables["Table"] as System.ComponentModel.IListSource).GetList(), "5minutes");
-
-            chart2.ChartAreas[bag].AxisX.LabelStyle.Angle = 90;
-            chart2.ChartAreas[bag].AxisX.LabelStyle.Format = "HH:mm";
-            chart2.DataBindTable((ds.Tables["Table1"] as System.ComponentModel.IListSource).GetList(), "5minutes");
-
-
-
-
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 1, 0);

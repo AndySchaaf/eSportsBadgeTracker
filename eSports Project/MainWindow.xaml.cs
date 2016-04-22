@@ -44,9 +44,11 @@ namespace eSportsBadgeTracker {
                 SearchUser.dispatcherTimer.IsEnabled = false;
             }
 
+            /*
             if (scanTab.IsSelected) {
                 RedeemPage.txtScanner.SelectAll();
             }
+            */
 
             if (statsTab.IsSelected)
             {
@@ -62,9 +64,9 @@ namespace eSportsBadgeTracker {
         {
             tabControl.Items.Remove(assignTab);
             tabControl.Items.Remove(statsTab);
-            tabControl.Items.Remove(scanTab);
+            //tabControl.Items.Remove(scanTab);
             tabControl.Items.Remove(raffleTab);
-            tabControl.Items.Remove(addBadgeTab);
+            //tabControl.Items.Remove(addBadgeTab);
             btnExit.IsEnabled = false;
             btnExit.Visibility = Visibility.Hidden;
         }
@@ -73,7 +75,7 @@ namespace eSportsBadgeTracker {
         {
             tabControl.Items.Remove(statsTab);
             tabControl.Items.Remove(raffleTab);
-            tabControl.Items.Remove(addBadgeTab);
+            //tabControl.Items.Remove(addBadgeTab);
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e) {
